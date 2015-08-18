@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Indicator Fragment</string>
+    <string name="fragment_one">我的</string>
+    <string name="fragment_two">音乐馆</string>
+    <string name="fragment_three">发现</string>
+</resources>
