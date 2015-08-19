@@ -48,7 +48,7 @@
             android:background="@drawable/tab_bg"
             app:footerColor="@color/tab_indicator_text_selected"
             app:footerLineHeight="2dp"
-            app:footerTriangleHeight="3.0dp"
+            app:footerTriangleHeight="0dp"
             app:textColor="@color/tab_indicator_text"
             app:textSizeNormal="@dimen/common_text_size_middle_2"
             app:textSizeSelected="@dimen/common_text_size_middle_2" />
