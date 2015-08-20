@@ -5,4 +5,5 @@ package manage;
  */
 public class Constant {
     public static final String FINISH="finish";
+    public static final String EXTRA_TAB = "tab";
 }
