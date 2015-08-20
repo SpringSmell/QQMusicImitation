@@ -6,8 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import com.activities.zoulx.homeactivity.R;
 
@@ -15,7 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FragmentThree extends Fragment {
+public class MainThreeFragment extends Fragment {
 
     private View mMainView;
     private static ArrayList<Map<String, Object>> mlistItems;
@@ -30,22 +28,14 @@ public class FragmentThree extends Fragment {
             mlistItems.add(map);
         }
     }
-    public FragmentThree() {
+    public MainThreeFragment() {
         super();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContext=getActivity();
-        mMainView = inflater.inflate(R.layout.fragment_finally, container, false);
-        ListView listView = (ListView) mMainView.findViewById(R.id.list);
-        SimpleAdapter adapter = new SimpleAdapter(mContext, mlistItems,
-                R.layout.listview_item, new String[] {
-                "name", "sex"
-        }, new int[] {
-                R.id.name, R.id.download
-        });
-        listView.setAdapter(adapter);
+        mMainView = inflater.inflate(R.layout.finally_fragment, container, false);
         return mMainView;
     }
 

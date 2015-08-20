@@ -20,7 +20,7 @@ import Bean.TabInfo;
 import adapter.WidgetAdapter;
 import widgets.TitleIndicator;
 
-public abstract class IndicatorFragmentActivity extends FragmentActivity implements OnPageChangeListener {
+public abstract class MusicsPavilionFragmentActivity extends FragmentActivity implements OnPageChangeListener {
     private static final String TAG = "DxFragmentActivity";
     public static final String EXTRA_TAB = "tab";
     public static final String EXTRA_QUIT = "extra.quit";
@@ -151,7 +151,7 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
      * @return layout id
      */
     protected int getMainViewResId() {
-        return R.layout.main_tab_activity;
+        return R.layout.musics_pavilion;
     }
 
     /**

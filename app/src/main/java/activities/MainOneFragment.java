@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.activities.zoulx.homeactivity.R;
 
-public class FragmentOne extends Fragment {
+public class MainOneFragment extends Fragment {
 
-    public FragmentOne() {
+    public MainOneFragment() {
         super();
     }
     

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <!--
     <LinearLayout
@@ -33,15 +33,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp" >
+        android:layout_height="40dp">
 
         <ImageView
+            android:id="@+id/main_left_img"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_launcher" />
 
         <widgets.TitleIndicator
-            android:id="@+id/pagerindicator"
+            android:id="@+id/main_pager_indicator"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -52,7 +53,9 @@
             app:textColor="@color/tab_indicator_text"
             app:textSizeNormal="@dimen/common_text_size_middle_2"
             app:textSizeSelected="@dimen/common_text_size_middle_2" />
+
         <ImageView
+            android:id="@+id/main_right_img"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_launcher" />
@@ -60,10 +63,17 @@
     <!-- Don't set background for ViewPager. It doesn't work because of page margin -->
 
     <widgets.ViewPagerCompat
-        android:id="@+id/pager"
+        android:id="@+id/main_pager"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:duplicateParentState="true" />
-
+    <!--
+    <include
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        layout="@layout/include_bottom"
+        />
+        -->
 </LinearLayout>

@@ -8,9 +8,11 @@
     <!-- For list texts (top line) -->
     <dimen name="common_text_size_middle">16dp</dimen>
     <dimen name="common_text_size_middle_2">14dp</dimen>
-    <!-- For list texts (bottom line), summary texts, icon texts, descriptions, tag texts -->
+    <!-- For list texts (include_bottom line), summary texts, icon texts, descriptions, tag texts -->
     <dimen name="common_text_size_small">13dp</dimen>
     <dimen name="common_text_size_small_2">10dp</dimen>
     <dimen name="common_text_size_small_3">12dp</dimen>
     <dimen name="page_margin_width">12dp</dimen>
+    <dimen name="title_height">20dp</dimen>
+    <dimen name="main_status_bar_height">40dp</dimen>
 </resources>

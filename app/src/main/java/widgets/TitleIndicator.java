@@ -3,8 +3,6 @@
  */
 package widgets;
 
-import java.util.List;
-
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -22,11 +20,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import activities.IndicatorFragmentActivity.TabInfo;
 import com.activities.zoulx.homeactivity.R;
 
+import java.util.List;
+
+import Bean.TabInfo;
+
 /**
- *这是个选项卡式的控件，会随着viewpager的滑动而滑动
+ * 这是个选项卡式的控件，会随着viewpager的滑动而滑动
  */
 @SuppressWarnings("static-access")
 public class TitleIndicator extends LinearLayout implements View.OnClickListener,
@@ -74,7 +75,8 @@ public class TitleIndicator extends LinearLayout implements View.OnClickListener
 
     private Context mContext;
 
-    private final int BSSEEID = 0xffff00;;
+    private final int BSSEEID = 0xffff00;
+    ;
 
     private boolean mChangeOnClick = true;
 
@@ -178,8 +180,8 @@ public class TitleIndicator extends LinearLayout implements View.OnClickListener
      * 获取指定下标的选项卡的标题
      */
     private String getTitle(int pos) {
-        // Set the default title
-        String title = "title " + pos;
+        // Set the default include_title
+        String title = "include_title " + pos;
         // If the TitleProvider exist
         if (mTabs != null && mTabs.size() > pos) {
             title = mTabs.get(pos).getName();
@@ -246,11 +248,7 @@ public class TitleIndicator extends LinearLayout implements View.OnClickListener
 
     protected void add(int index, String label, int icon, boolean hasTips) {
         View tabIndicator;
-        if (index < 2) {
-            tabIndicator = mInflater.inflate(R.layout.title_flow_indicator, this, false);
-        } else {
-            tabIndicator = mInflater.inflate(R.layout.title_flow_indicator_v2, this, false);
-        }
+        tabIndicator = mInflater.inflate(R.layout.title_tab_indicator, this, false);
         final TextView tv = (TextView) tabIndicator.findViewById(R.id.tab_title);
         final ImageView tips = (ImageView) tabIndicator.findViewById(R.id.tab_title_tips);
         if (mTextColor != null) {
@@ -272,7 +270,7 @@ public class TitleIndicator extends LinearLayout implements View.OnClickListener
         tabIndicator.setOnClickListener(this);
         LayoutParams lP = (LayoutParams) tabIndicator.getLayoutParams();
         lP.gravity = Gravity.CENTER_VERTICAL;
-        addView(tabIndicator);
+        this.addView(tabIndicator);
     }
 
     public void setDisplayedPage(int index) {
