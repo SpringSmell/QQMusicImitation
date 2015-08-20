@@ -22,6 +22,7 @@
     <!-- For suggestions -->
     <color name="common_blue">#4b8bbd</color>
     <color name="tab_indicator_text_selected">#ffffff</color>
+    <color name="musics_pavilion_text_selected">#00ff00</color>
     <color name="tab_indicator_text_unselected">#aac5d7</color>
     <color name="page_viewer_margin_color">#007800</color>
 
