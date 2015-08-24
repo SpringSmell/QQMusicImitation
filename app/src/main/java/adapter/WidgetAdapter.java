@@ -8,17 +8,17 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import Bean.TabInfo;
+import Bean.TabInfoBean;
 
 /**
  * Created by zoulx on 2015/8/18.
  * 最外层viewPager的适配器
  */
 public class WidgetAdapter extends FragmentPagerAdapter {
-    ArrayList<TabInfo> tabs = null;
+    ArrayList<TabInfoBean> tabs = null;
     Context context = null;
 
-    public WidgetAdapter(Context context, FragmentManager fm, ArrayList<TabInfo> tabs) {
+    public WidgetAdapter(Context context, FragmentManager fm, ArrayList<TabInfoBean> tabs) {
         super(fm);
         this.tabs = tabs;
         this.context = context;
@@ -28,7 +28,7 @@ public class WidgetAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int pos) {
         Fragment fragment = null;
         if (tabs != null && pos < tabs.size()) {
-            TabInfo tab = tabs.get(pos);
+            TabInfoBean tab = tabs.get(pos);
             if (tab == null)
                 return null;
             fragment = tab.createFragment();
@@ -50,7 +50,7 @@ public class WidgetAdapter extends FragmentPagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        TabInfo tab = tabs.get(position);
+        TabInfoBean tab = tabs.get(position);
         Fragment fragment = (Fragment) super.instantiateItem(container, position);
         tab.fragment = fragment;
         return fragment;

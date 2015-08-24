@@ -44,7 +44,7 @@
         android:background="@drawable/dx_new_bkg"
         android:gravity="center"
         android:textSize="12sp"
-        android:textColor="@color/common_white"
+        android:textColor="@color/white"
         android:visibility="gone" >
     </TextView>
 

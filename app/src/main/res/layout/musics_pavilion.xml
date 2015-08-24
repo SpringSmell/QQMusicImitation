@@ -3,25 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/music_pavilion_background"
     android:orientation="vertical">
 
-    <widgets.TitleIndicator
+    <widgets.MusicPavilionIndicator
         android:id="@+id/musics_pavilion_pager_indicator"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/tab_bg"
-        app:footerColor="@color/musics_pavilion_text_selected"
-        app:footerLineHeight="2dp"
-        app:footerTriangleHeight="3dp"
+        android:layout_height="50dp"
+        android:background="@color/music_pavilion_background"
+        app:footerColor="@color/main_green"
+        app:footerLineHeight="0dp"
+        app:footerTriangleHeight="2dp"
         app:textColor="@color/music_pavilion_indicator_text"
-        app:textSizeNormal="@dimen/common_text_size_middle_2"
-        app:textSizeSelected="@dimen/common_text_size_middle_2" />
+        app:textSizeNormal="@dimen/common_text_size_middle"
+        app:textSizeSelected="@dimen/common_text_size_middle" />
 
     <widgets.ViewPagerCompat
         android:id="@+id/musics_pavilion_pager"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
         android:duplicateParentState="true" />
 </LinearLayout>

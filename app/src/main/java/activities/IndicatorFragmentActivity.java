@@ -10,13 +10,16 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.activities.zoulx.homeactivity.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Bean.TabInfo;
+import Bean.MainBottomInfoBean;
+import Bean.TabInfoBean;
+import adapter.MainBottomAdapter;
 import adapter.WidgetAdapter;
 import widgets.TitleIndicator;
 
@@ -24,16 +27,24 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
     private static final String TAG = "DxFragmentActivity";
     public static final String EXTRA_TAB = "tab";
     public static final String EXTRA_QUIT = "extra.quit";
+    protected int mCurrentBottomPager=0;
     protected int mCurrentTab = 0;
     protected int mLastTab = -1;
     //存放选项卡信息的列表
-    private ArrayList<TabInfo> mTabs = new ArrayList<>();
+    protected ArrayList<TabInfoBean> mTabs = new ArrayList<>();
+    private ArrayList<MainBottomInfoBean> bottomBeans=new ArrayList<>();
     //viewpager adapter
     protected WidgetAdapter mHomePagerAdapter = null;
     //viewpager
     protected ViewPager mPager;
     //选项卡控件
     protected TitleIndicator mIndicator;
+    /**主布局底部Bean*/
+    protected MainBottomInfoBean mMainBottomInfoBean;
+    /**主布局底部adapter*/
+    protected MainBottomAdapter mMainBottomAdapter;
+    /**主布局底部viewPager*/
+    protected ViewPager mMainBottomViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +74,9 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
 
     private final void initViews() {
         // 这里初始化界面
+
         mCurrentTab = supplyTabs(mTabs);
+        mCurrentBottomPager=supplyBottomPager(bottomBeans);
         Intent intent = getIntent();
         if (intent != null) {
             mCurrentTab = intent.getIntExtra(EXTRA_TAB, mCurrentTab);
@@ -79,6 +92,10 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
         mIndicator = (TitleIndicator) findViewById(R.id.main_pager_indicator);
         mIndicator.init(mCurrentTab, mTabs, mPager);
 
+        mMainBottomViewPager= (ViewPager) findViewById(R.id.main_bottom_viewpager);
+        mMainBottomAdapter=new MainBottomAdapter(getSupportFragmentManager(),bottomBeans);
+        mMainBottomViewPager.setAdapter(mMainBottomAdapter);
+        mMainBottomViewPager.setCurrentItem(mCurrentBottomPager);
         mPager.setCurrentItem(mCurrentTab);
         mLastTab = mCurrentTab;
     }
@@ -87,7 +104,7 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
      * 添加一个选项卡
      * @param tab
      */
-    public void addTabInfo(TabInfo tab) {
+    public void addTabInfo(TabInfoBean tab) {
         mTabs.add(tab);
         mHomePagerAdapter.notifyDataSetChanged();
     }
@@ -96,7 +113,7 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
      * 从列表添加选项卡
      * @param tabs
      */
-    public void addTabInfos(ArrayList<TabInfo> tabs) {
+    public void addTabInfos(ArrayList<TabInfoBean> tabs) {
         mTabs.addAll(tabs);
         mHomePagerAdapter.notifyDataSetChanged();
     }
@@ -119,10 +136,10 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
         }
     }
 
-    protected TabInfo getFragmentById(int tabId) {
+    protected TabInfoBean getFragmentById(int tabId) {
         if (mTabs == null) return null;
         for (int index = 0, count = mTabs.size(); index < count; index++) {
-            TabInfo tab = mTabs.get(index);
+            TabInfoBean tab = mTabs.get(index);
             if (tab.getId() == tabId) {
                 return tab;
             }
@@ -157,7 +174,12 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
     /**
      * 在这里提供要显示的选项卡数据
      */
-    protected abstract int supplyTabs(List<TabInfo> tabs);
+    protected abstract int supplyTabs(List<TabInfoBean> tabs);
+
+    /**
+     * 在这里提供要显示的选项卡数据
+     */
+    protected abstract int supplyBottomPager(List<MainBottomInfoBean> bottomBeans);
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -165,5 +187,9 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
         // https://code.google.com/p/android/issues/detail?id=19917
         outState.putString("WORKAROUND_FOR_BUG_19917_KEY", "WORKAROUND_FOR_BUG_19917_VALUE");
         super.onSaveInstanceState(outState);
+    }
+
+    protected void showToast(String content){
+        Toast.makeText(this,content,Toast.LENGTH_SHORT).show();
     }
 }

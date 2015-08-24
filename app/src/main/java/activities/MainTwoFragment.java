@@ -13,18 +13,18 @@ import com.activities.zoulx.homeactivity.R;
 
 import java.util.ArrayList;
 
-import Bean.TabInfo;
+import Bean.TabInfoBean;
 import adapter.WidgetAdapter;
 import manage.Constant;
-import widgets.TitleIndicator;
+import widgets.MusicPavilionIndicator;
 
 public class MainTwoFragment extends Fragment implements ViewPager.OnPageChangeListener {
 
     private View mView;
     private ViewPager mViewPager;
-    private TitleIndicator mTitleIndicator;
+    private MusicPavilionIndicator mMusicPavilionIndicator;
     private WidgetAdapter mWidgetAdapter;
-    private ArrayList<TabInfo> mTabs;
+    private ArrayList<TabInfoBean> mTabs;
     /**
      * 当前显示的页面
      */
@@ -48,7 +48,7 @@ public class MainTwoFragment extends Fragment implements ViewPager.OnPageChangeL
         mCurrentTab = supplyTabs();
         mWidgetAdapter = new WidgetAdapter(getActivity(), getChildFragmentManager(), mTabs);
         mViewPager = (ViewPager) mView.findViewById(R.id.musics_pavilion_pager);
-        mTitleIndicator = (TitleIndicator) mView.findViewById(R.id.musics_pavilion_pager_indicator);
+        mMusicPavilionIndicator = (MusicPavilionIndicator) mView.findViewById(R.id.musics_pavilion_pager_indicator);
 
         Intent data = getActivity().getIntent();
         if (null != data) {
@@ -57,7 +57,7 @@ public class MainTwoFragment extends Fragment implements ViewPager.OnPageChangeL
         mViewPager.setAdapter(mWidgetAdapter);
         mViewPager.setOnPageChangeListener(this);
         mViewPager.setOffscreenPageLimit(mTabs.size());
-        mTitleIndicator.init(mCurrentTab, mTabs, mViewPager);
+        mMusicPavilionIndicator.init(mCurrentTab, mTabs, mViewPager);
         mViewPager.setCurrentItem(mCurrentTab);
         mLastTab = mCurrentTab;
     }
@@ -65,7 +65,7 @@ public class MainTwoFragment extends Fragment implements ViewPager.OnPageChangeL
     /**
      * 添加一个标签
      */
-    public void addTabInfo(TabInfo tab) {
+    public void addTabInfo(TabInfoBean tab) {
         mTabs.add(tab);
         mWidgetAdapter.notifyDataSetChanged();
     }
@@ -75,7 +75,7 @@ public class MainTwoFragment extends Fragment implements ViewPager.OnPageChangeL
      *
      * @param tabs
      */
-    public void addTabInfos(ArrayList<TabInfo> tabs) {
+    public void addTabInfos(ArrayList<TabInfoBean> tabs) {
         mTabs.addAll(tabs);
         mWidgetAdapter.notifyDataSetChanged();
     }
@@ -83,23 +83,23 @@ public class MainTwoFragment extends Fragment implements ViewPager.OnPageChangeL
 
     private int supplyTabs() {
         mTabs = new ArrayList<>();
-        mTabs.add(new TabInfo(1, getString(R.string.recommend), MusicPavilionOneFragment.class));
-        mTabs.add(new TabInfo(2, getString(R.string.products), MusicPavilionTwoFragment.class));
-        mTabs.add(new TabInfo(3, getString(R.string.song_menu), MusicPavilionThreeFragment.class));
-        mTabs.add(new TabInfo(4, getString(R.string.station), MusicPavilionThreeFragment.class));
-        mTabs.add(new TabInfo(5, getString(R.string.MV), MusicPavilionThreeFragment.class));
+        mTabs.add(new TabInfoBean(1, getString(R.string.recommend), MusicPavilionRecommendFragment.class));
+        mTabs.add(new TabInfoBean(2, getString(R.string.products), MusicPavilionTwoFragment.class));
+        mTabs.add(new TabInfoBean(3, getString(R.string.song_menu), MusicPavilionThreeFragment.class));
+        mTabs.add(new TabInfoBean(4, getString(R.string.station), MusicPavilionThreeFragment.class));
+        mTabs.add(new TabInfoBean(5, getString(R.string.MV), MusicPavilionThreeFragment.class));
         return 0;
     }
 
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        mTitleIndicator.onScrolled((mViewPager.getWidth() + mViewPager.getPageMargin()) * position + positionOffsetPixels);
+        mMusicPavilionIndicator.onScrolled((mViewPager.getWidth() + mViewPager.getPageMargin()) * position + positionOffsetPixels);
     }
 
     @Override
     public void onPageSelected(int position) {
-        mTitleIndicator.onSwitched(position);
+        mMusicPavilionIndicator.onSwitched(position);
         mCurrentTab = position;
     }
 
@@ -110,14 +110,14 @@ public class MainTwoFragment extends Fragment implements ViewPager.OnPageChangeL
         }
     }
 
-    private TabInfo getFragmentID(int tabID) {
+    private TabInfoBean getFragmentID(int tabID) {
         if (mTabs == null) {
             return null;
         }
         for (int index = 0, count = mTabs.size(); index < count; index++) {
-            TabInfo tabInfo = mTabs.get(index);
-            if (tabID == tabInfo.getId()) {
-                return tabInfo;
+            TabInfoBean tabInfoBean = mTabs.get(index);
+            if (tabID == tabInfoBean.getId()) {
+                return tabInfoBean;
             }
         }
         return null;

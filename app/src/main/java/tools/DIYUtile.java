@@ -1,14 +1,11 @@
-package util;
+package tools;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -42,11 +39,11 @@ public class DIYUtile {
 		// 获取ListView对应的Adapter
 		ListAdapter listAdapter = listView.getAdapter();
 		if (listAdapter == null || listAdapter.getCount() <= 0) {
-			ViewGroup.LayoutParams params = listView.getLayoutParams();
-			params.height = 500;
+//			ViewGroup.LayoutParams params = listView.getLayoutParams();
+//			params.height = 500;
 			// listView.getDividerHeight()获取子项间分隔符占用的高度
 			// params.height最后得到整个ListView完整显示需要的高度
-			listView.setLayoutParams(params);
+//			listView.setLayoutParams(params);
 			return;
 		}
 		int totalHeight = 0;

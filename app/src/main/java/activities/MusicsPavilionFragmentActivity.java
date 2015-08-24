@@ -16,7 +16,7 @@ import com.activities.zoulx.homeactivity.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import Bean.TabInfo;
+import Bean.TabInfoBean;
 import adapter.WidgetAdapter;
 import widgets.TitleIndicator;
 
@@ -27,7 +27,7 @@ public abstract class MusicsPavilionFragmentActivity extends FragmentActivity im
     protected int mCurrentTab = 0;
     protected int mLastTab = -1;
     //存放选项卡信息的列表
-    private ArrayList<TabInfo> mTabs = new ArrayList<>();
+    private ArrayList<TabInfoBean> mTabs = new ArrayList<>();
     //viewpager adapter
     protected WidgetAdapter mHomePagerAdapter = null;
     //viewpager
@@ -87,7 +87,7 @@ public abstract class MusicsPavilionFragmentActivity extends FragmentActivity im
      * 添加一个选项卡
      * @param tab
      */
-    public void addTabInfo(TabInfo tab) {
+    public void addTabInfo(TabInfoBean tab) {
         mTabs.add(tab);
         mHomePagerAdapter.notifyDataSetChanged();
     }
@@ -96,7 +96,7 @@ public abstract class MusicsPavilionFragmentActivity extends FragmentActivity im
      * 从列表添加选项卡
      * @param tabs
      */
-    public void addTabInfos(ArrayList<TabInfo> tabs) {
+    public void addTabInfos(ArrayList<TabInfoBean> tabs) {
         mTabs.addAll(tabs);
         mHomePagerAdapter.notifyDataSetChanged();
     }
@@ -119,10 +119,10 @@ public abstract class MusicsPavilionFragmentActivity extends FragmentActivity im
         }
     }
 
-    protected TabInfo getFragmentById(int tabId) {
+    protected TabInfoBean getFragmentById(int tabId) {
         if (mTabs == null) return null;
         for (int index = 0, count = mTabs.size(); index < count; index++) {
-            TabInfo tab = mTabs.get(index);
+            TabInfoBean tab = mTabs.get(index);
             if (tab.getId() == tabId) {
                 return tab;
             }
@@ -157,7 +157,7 @@ public abstract class MusicsPavilionFragmentActivity extends FragmentActivity im
     /**
      * 在这里提供要显示的选项卡数据
      */
-    protected abstract int supplyTabs(List<TabInfo> tabs);
+    protected abstract int supplyTabs(List<TabInfoBean> tabs);
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

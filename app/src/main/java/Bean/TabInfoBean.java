@@ -10,7 +10,7 @@ import java.lang.reflect.Constructor;
  * Created by zoulx on 2015/8/18.
  * 单个选项卡类，每个选项卡包含名字，图标以及提示（可选，默认不显示）
  */
-public class TabInfo implements Parcelable {
+public class TabInfoBean implements Parcelable {
     private int id;
     private int icon;
     private String name = null;
@@ -21,18 +21,18 @@ public class TabInfo implements Parcelable {
     public Class fragmentClass = null;
 
     @SuppressWarnings("rawtypes")
-    public TabInfo(int id, String name, Class clazz) {
+    public TabInfoBean(int id, String name, Class clazz) {
         this(id, name, 0, clazz);
     }
 
     @SuppressWarnings("rawtypes")
-    public TabInfo(int id, String name, boolean hasTips, Class clazz) {
+    public TabInfoBean(int id, String name, boolean hasTips, Class clazz) {
         this(id, name, 0, clazz);
         this.hasTips = hasTips;
     }
 
     @SuppressWarnings("rawtypes")
-    public TabInfo(int id, String name, int iconid, Class clazz) {
+    public TabInfoBean(int id, String name, int iconid, Class clazz) {
         super();
 
         this.name = name;
@@ -41,7 +41,7 @@ public class TabInfo implements Parcelable {
         fragmentClass = clazz;
     }
 
-    public TabInfo(Parcel p) {
+    public TabInfoBean(Parcel p) {
         this.id = p.readInt();
         this.name = p.readString();
         this.icon = p.readInt();
@@ -86,13 +86,13 @@ public class TabInfo implements Parcelable {
         return fragment;
     }
 
-    public static final Parcelable.Creator<TabInfo> CREATOR = new Parcelable.Creator<TabInfo>() {
-        public TabInfo createFromParcel(Parcel p) {
-            return new TabInfo(p);
+    public static final Parcelable.Creator<TabInfoBean> CREATOR = new Parcelable.Creator<TabInfoBean>() {
+        public TabInfoBean createFromParcel(Parcel p) {
+            return new TabInfoBean(p);
         }
 
-        public TabInfo[] newArray(int size) {
-            return new TabInfo[size];
+        public TabInfoBean[] newArray(int size) {
+            return new TabInfoBean[size];
         }
     };
 

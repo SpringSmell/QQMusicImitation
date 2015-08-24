@@ -30,7 +30,7 @@ import Bean.TabInfoBean;
  * 这是个选项卡式的控件，会随着viewpager的滑动而滑动
  */
 @SuppressWarnings("static-access")
-public class TitleIndicator extends LinearLayout implements View.OnClickListener,
+public class MusicPavilionIndicator extends LinearLayout implements View.OnClickListener,
         OnFocusChangeListener {
     @SuppressWarnings("unused")
     private boolean DEBUG = false;
@@ -94,7 +94,7 @@ public class TitleIndicator extends LinearLayout implements View.OnClickListener
     /**
      * Default constructor
      */
-    public TitleIndicator(Context context) {
+    public MusicPavilionIndicator(Context context) {
         super(context);
         initDraw(FOOTER_LINE_HEIGHT, FOOTER_COLOR);
     }
@@ -105,7 +105,7 @@ public class TitleIndicator extends LinearLayout implements View.OnClickListener
      * @param context
      * @param attrs
      */
-    public TitleIndicator(Context context, AttributeSet attrs) {
+    public MusicPavilionIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
         setFocusable(true);
         setOnFocusChangeListener(this);
@@ -248,7 +248,7 @@ public class TitleIndicator extends LinearLayout implements View.OnClickListener
 
     protected void add(int index, String label, int icon, boolean hasTips) {
         View tabIndicator;
-        tabIndicator = mInflater.inflate(R.layout.main_tab_indicator, this, false);
+        tabIndicator = mInflater.inflate(R.layout.music_tab_indicator, this, false);
         final TextView tv = (TextView) tabIndicator.findViewById(R.id.tab_title);
         final ImageView tips = (ImageView) tabIndicator.findViewById(R.id.tab_title_tips);
         if (mTextColor != null) {

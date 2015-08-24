@@ -9,5 +9,10 @@
     <string name="products">排行</string>
     <string name="song_menu">歌单</string>
     <string name="station">电台</string>
+    <string name="singer">歌手</string>
+    <string name="category">分类</string>
+    <string name="song_group">专辑</string>
     <string name="MV">MV</string>
+    <string name="start_left">播放上一首</string>
+    <string name="start_right">播放下一首</string>
 </resources>

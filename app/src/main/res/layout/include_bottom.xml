@@ -3,6 +3,7 @@
     android:id="@+id/main_bottom_border"
     android:layout_width="match_parent"
     android:layout_height="@dimen/main_status_bar_height"
+    android:background="@color/thin_black"
     android:orientation="horizontal"
         >
 
@@ -10,16 +11,19 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/thin_black"
             android:id="@+id/main_bottom_viewpager"
             />
         <ImageView
             android:id="@+id/main_bottom_pause"
             android:layout_width="40dp"
+            android:layout_margin="2dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_launcher"/>
         <ImageView
             android:id="@+id/main_bottom_queue"
             android:layout_width="40dp"
+            android:layout_margin="2dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_launcher"/>
 
