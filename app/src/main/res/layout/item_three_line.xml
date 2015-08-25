@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/selector_item_recommend"
+    android:orientation="horizontal">
+<ImageView
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:scaleType="fitXY"
+    android:layout_weight="3"
+    android:src="@drawable/new_song"/>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Let It All Go - Birdy"
+            android:textColor="@color/white"
+            android:id="@+id/song_one_line"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:text="2 Powerful - Major Lazer"
+            android:id="@+id/song_two_line"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="3 Baby Girl - Justine HaxLey"
+            android:id="@+id/song_three_line"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"
+            />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/all_right"
+            android:layout_marginRight="@dimen/all_right_margin"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

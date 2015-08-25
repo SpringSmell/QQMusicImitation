@@ -7,25 +7,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="160dp">
+
             <widgets.SideViewPager
                 android:id="@+id/poster_viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                />
+                android:layout_height="160dp" />
+
             <LinearLayout
                 android:id="@+id/poster_dots"
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:gravity="center|bottom"
-                android:orientation="horizontal"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:gravity="center|bottom"
+                android:orientation="horizontal">
                 <!-- test dot
                 <TextView
                     android:layout_width="wrap_content"
@@ -38,9 +39,10 @@
                     -->
             </LinearLayout>
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/recommend_enter_height"
             android:layout_marginLeft="@dimen/pager_margin"
             android:layout_marginRight="@dimen/pager_margin"
             android:layout_marginTop="@dimen/pager_margin"
@@ -49,11 +51,11 @@
             <TextView
                 android:id="@+id/recommend_singer"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_height="@dimen/recommend_enter_height"
                 android:layout_marginRight="2dp"
+                android:layout_weight="1"
                 android:background="@color/item_background"
-                android:drawableLeft="@drawable/ic_launcher"
+                android:drawableLeft="@drawable/singer"
                 android:gravity="center"
                 android:text="@string/singer"
                 android:textColor="@color/white"
@@ -62,12 +64,12 @@
             <TextView
                 android:id="@+id/recommend_category"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_height="@dimen/recommend_enter_height"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
+                android:layout_weight="1"
                 android:background="@color/item_background"
-                android:drawableLeft="@drawable/ic_launcher"
+                android:drawableLeft="@drawable/category"
                 android:gravity="center"
                 android:text="@string/category"
                 android:textColor="@color/white"
@@ -76,30 +78,192 @@
             <TextView
                 android:id="@+id/recommend_song_group"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_height="@dimen/recommend_enter_height"
                 android:layout_marginLeft="2dp"
+                android:layout_weight="1"
                 android:background="@color/item_background"
-                android:drawableLeft="@drawable/ic_launcher"
+                android:drawableLeft="@drawable/song_group"
                 android:gravity="center"
                 android:text="@string/song_group"
                 android:textColor="@color/white"
                 android:textSize="@dimen/recommend_two_line_sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/pager_margin"
-            android:layout_marginRight="@dimen/pager_margin">
+            android:layout_marginRight="@dimen/pager_margin"
+            android:orientation="vertical">
+
             <include
                 android:id="@+id/center_group"
+                layout="@layout/item_recommend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp" />
 
-                layout="@layout/item_recommend"
-                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="新歌速递"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </GridView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="为你推荐"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <ListView
+                android:id="@+id/for_you_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/transparent"
+                android:dividerHeight="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="热门歌单"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </GridView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="妈呀，这些歌尺度太大了！"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></GridView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="明星私房歌单"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></GridView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="MV精选"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/more"
+                    android:textColor="@color/tab_indicator_text_unselected"
+                    android:textSize="12sp" />
+
+                <GridView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></GridView>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:text="巅峰榜-欧美（8月20日更新）"
+                android:textColor="@color/white" />
+
+            <include
+                android:id="@+id/recommend_peakedness"
+                layout="@layout/item_three_line"
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:text="音乐人"
+                android:textColor="@color/white" />
+
+            <include
+                android:id="@+id/recommend_music_person"
+                layout="@layout/item_three_line"
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="专栏"
+                    android:textColor="@color/white"
+                    android:id="@+id/textView" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/more"
+                    android:textColor="@color/tab_indicator_text_unselected" />
+                <ListView
+                    android:id="@+id/specially_group"
+                    android:layout_width="match_parent"
+                    android:divider="@color/transparent"
+                    android:dividerHeight="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </ListView>
+            </RelativeLayout>
 
         </LinearLayout>
     </LinearLayout>

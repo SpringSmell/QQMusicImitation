@@ -6,12 +6,12 @@
 
     <widgets.RoundImageView
         android:id="@+id/bottom_cover"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
-        android:src="@drawable/about" />
+        android:src="@drawable/song_cover" />
 
     <TextView
         android:id="@+id/bottom_singer"

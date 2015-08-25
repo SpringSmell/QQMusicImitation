@@ -40,9 +40,11 @@
 
         <ImageView
             android:id="@+id/main_left_img"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/menu" />
 
         <widgets.TitleIndicator
             android:id="@+id/main_pager_indicator"
@@ -59,9 +61,11 @@
 
         <ImageView
             android:id="@+id/main_right_img"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/search" />
     </LinearLayout>
     <!-- Don't set background for ViewPager. It doesn't work because of page margin -->
 

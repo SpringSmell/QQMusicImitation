@@ -14,8 +14,10 @@
     <dimen name="common_text_size_small_3">12dp</dimen>
     <dimen name="page_margin_width">12dp</dimen>
     <dimen name="title_height">20dp</dimen>
-    <dimen name="main_status_bar_height">50dp</dimen>
+    <dimen name="main_status_bar_height">57dp</dimen>
     <dimen name="recommend_item_height">50dp</dimen>
     <dimen name="pager_margin">10dp</dimen>
     <dimen name="recommend_two_line_sp">15sp</dimen>
+    <dimen name="recommend_enter_height">40dip</dimen>
+    <dimen name="all_right_margin">8dp</dimen>
 </resources>

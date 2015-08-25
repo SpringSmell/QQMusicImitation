@@ -15,4 +15,5 @@
     <string name="MV">MV</string>
     <string name="start_left">播放上一首</string>
     <string name="start_right">播放下一首</string>
+    <string name="more">查看更多 ></string>
 </resources>
