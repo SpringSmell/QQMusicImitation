@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -19,10 +20,13 @@ import android.widget.Toast;
 import com.activities.zoulx.homeactivity.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import Bean.CenterRecommendBean;
 import Bean.ItemListBean;
 import Bean.PosterBean;
 import adapter.ItemListAdapter;
+import adapter.MainGridViewAdapter;
 import adapter.PosterAdapter;
 import manage.Constant;
 import tools.DIYUtile;
@@ -38,10 +42,30 @@ public class MusicPavilionRecommendFragment extends Fragment implements ViewPage
     private View mView;
     private ViewPager mViewPager;
     private RelativeLayout centerGroup;
+    //新歌速递
+    private GridView newSongGridView;
+    private MainGridViewAdapter newSongMainGridViewAdapter;
+    private ArrayList<CenterRecommendBean> newSongList;
     //为你推荐
     private ListView forYouRecommendListView;
     private ItemListAdapter forYouRecommendAdapter;
     private ArrayList<ItemListBean> forYouRecommendBeans;
+    //热门歌单
+    private GridView hotGridView;
+    private MainGridViewAdapter hotGridViewAdapter;
+    private ArrayList<CenterRecommendBean> hotList;
+    //娱乐节目
+    private GridView entertainmentGridView;
+    private MainGridViewAdapter entertainmentGridViewAdapter;
+    private ArrayList<CenterRecommendBean> entertainmentList;
+    //明星歌单
+    private GridView starGridView;
+    private MainGridViewAdapter starGridViewAdapter;
+    private ArrayList<CenterRecommendBean> starList;
+    //MV精选
+    private GridView MVGridView;
+    private MainGridViewAdapter MVGridViewAdapter;
+    private ArrayList<CenterRecommendBean> MVList;
     //专栏
     private ListView speciallyListView;
     private ItemListAdapter speciallyAdapter;
@@ -107,14 +131,26 @@ public class MusicPavilionRecommendFragment extends Fragment implements ViewPage
         listItemResId = R.layout.item_recommend;
 
         //
-        peakedness= (LinearLayout) mView.findViewById(R.id.recommend_peakedness);
-        musicsPerson= (LinearLayout) mView.findViewById(R.id.recommend_music_person);
+        peakedness = (LinearLayout) mView.findViewById(R.id.recommend_peakedness);
+        musicsPerson = (LinearLayout) mView.findViewById(R.id.recommend_music_person);
         peakedness.setOnClickListener(this);
         musicsPerson.setOnClickListener(this);
         //
         posterLayoutDots = (LinearLayout) mView.findViewById(R.id.poster_dots);
-
         dots = new ArrayList<>();
+        //新歌速递
+        newSongGridView = (GridView) mView.findViewById(R.id.recommend_new_song);
+        newSongList = new ArrayList<>();
+        CenterRecommendBean mCenterRecommendBean = new CenterRecommendBean();
+        mCenterRecommendBean.setTitle("让过去过去，让未来未来到来");
+        mCenterRecommendBean.setCount(2290000);
+        mCenterRecommendBean.setSongIcon("123");
+        mCenterRecommendBean.setTag("倾盖如故");
+        newSongList.add(mCenterRecommendBean);
+        newSongList.add(mCenterRecommendBean);
+        newSongList.add(mCenterRecommendBean);
+        newSongMainGridViewAdapter = new MainGridViewAdapter(mContext, newSongList);
+        newSongGridView.setAdapter(newSongMainGridViewAdapter);
         //为你推荐---------------
         forYouRecommendListView = (ListView) mView.findViewById(R.id.for_you_recommend);
         forYouRecommendBeans = new ArrayList<>();
@@ -133,6 +169,45 @@ public class MusicPavilionRecommendFragment extends Fragment implements ViewPage
         forYouRecommendAdapter = new ItemListAdapter(mContext, forYouRecommendBeans);
         forYouRecommendListView.setAdapter(forYouRecommendAdapter);
         DIYUtile.setListViewHeightBasedOnChildren(forYouRecommendListView);
+        //热门
+        hotGridView= (GridView) mView.findViewById(R.id.recommend_hot_order_song);
+        hotList=new ArrayList<>();
+        mCenterRecommendBean.setTag("中国好声音");
+        mCenterRecommendBean.setTagIconUrl("123");
+        mCenterRecommendBean.setRating("99.9");
+        mCenterRecommendBean.setSongIcon("123");
+        hotList.add(mCenterRecommendBean);
+        hotList.add(mCenterRecommendBean);
+        hotList.add(mCenterRecommendBean);
+        hotList.add(mCenterRecommendBean);
+        hotList.add(mCenterRecommendBean);
+        hotList.add(mCenterRecommendBean);
+        hotGridViewAdapter=new MainGridViewAdapter(mContext,hotList);
+        hotGridView.setAdapter(hotGridViewAdapter);
+        //娱乐
+        entertainmentGridView= (GridView) mView.findViewById(R.id.recommend_entertainment_programme);
+        entertainmentList=new ArrayList<>();
+        entertainmentList.add(mCenterRecommendBean);
+        entertainmentList.add(mCenterRecommendBean);
+        entertainmentList.add(mCenterRecommendBean);
+        entertainmentGridViewAdapter=new MainGridViewAdapter(mContext,entertainmentList);
+        entertainmentGridView.setAdapter(entertainmentGridViewAdapter);
+        //明星歌单
+        starGridView= (GridView) mView.findViewById(R.id.recommend_star_song_order);
+        starList=new ArrayList<>();
+        starList.add(mCenterRecommendBean);
+        starList.add(mCenterRecommendBean);
+        starList.add(mCenterRecommendBean);
+        starGridViewAdapter=new MainGridViewAdapter(mContext,starList);
+        starGridView.setAdapter(starGridViewAdapter);
+        //MV精选
+        MVGridView= (GridView) mView.findViewById(R.id.recommend_mv_selector);
+        MVList=new ArrayList<>();
+        MVList.add(mCenterRecommendBean);
+        MVList.add(mCenterRecommendBean);
+        MVList.add(mCenterRecommendBean);
+        MVGridViewAdapter=new MainGridViewAdapter(mContext,MVList);
+        MVGridView.setAdapter(MVGridViewAdapter);
         //专栏--------------
         speciallyListView = (ListView) mView.findViewById(R.id.specially_group);
         speciallyBeans = new ArrayList<>();

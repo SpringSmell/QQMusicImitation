@@ -14,6 +14,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -63,6 +64,20 @@ public class DIYUtile {
 		listView.setLayoutParams(params);
 	}
 
+//	public static void setGridViewHeightBaseOnChildren(GridView gridView){
+//		ListAdapter gridAdapter=gridView.getAdapter();
+//		if(null==gridAdapter){
+//			return;
+//		}
+//		int totalHeight = 0;
+//		int numColums=gridView.get
+//		for(int i=0;i<gridAdapter.getCount();i++){
+//			View gridItem=gridAdapter.getView(i,null,gridView);
+//			gridItem.measure(0,0);
+//			totalHeight+=gridItem.getMeasuredHeight();
+//		}
+//	}
+
 	/**
 	 * 时间戳转换 1277106667 => 2010-06-21 15:51:07
 	 * 
@@ -73,6 +88,24 @@ public class DIYUtile {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		String date = sdf.format(new Date(l * 1000));
 		return date;
+	}
+
+	/**
+	 * @describe 返回图片链接是否有效
+	 * @param imgurl 图片链接
+	 * @return
+	 * */
+	public static Boolean isImgUrlValid(String imgurl){
+		Boolean flag=false;
+
+		if (null != imgurl && !"".equalsIgnoreCase(imgurl) && (imgurl.endsWith(".png") || imgurl.endsWith(".PNG")
+				||imgurl.endsWith(".jpg")||imgurl.endsWith(".JPG")
+				||imgurl.endsWith(".gif")||imgurl.endsWith(".GIF")
+				||imgurl.endsWith(".jpge")||imgurl.endsWith(".JPGE"))) {
+			flag=true;
+		}
+
+		return flag;
 	}
 
 	/**

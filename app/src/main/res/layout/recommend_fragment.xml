@@ -114,8 +114,12 @@
                 android:textSize="15sp" />
 
             <GridView
+                android:id="@+id/recommend_new_song"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth">
 
             </GridView>
 
@@ -144,11 +148,15 @@
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
-            <GridView
+            <widgets.ShowAllItemGridView
+                android:id="@+id/recommend_hot_order_song"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth">
 
-            </GridView>
+            </widgets.ShowAllItemGridView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -160,8 +168,14 @@
                 android:textSize="15sp" />
 
             <GridView
+                android:id="@+id/recommend_entertainment_programme"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></GridView>
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth">
+
+            </GridView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -173,8 +187,12 @@
                 android:textSize="15sp" />
 
             <GridView
+                android:id="@+id/recommend_star_song_order"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></GridView>
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"></GridView>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -187,7 +205,8 @@
                     android:layout_marginTop="20dp"
                     android:text="MV精选"
                     android:textColor="@color/white"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -197,12 +216,21 @@
                     android:layout_marginTop="20dp"
                     android:text="@string/more"
                     android:textColor="@color/tab_indicator_text_unselected"
-                    android:textSize="12sp" />
-
-                <GridView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></GridView>
+                    android:textSize="12sp"
+                    android:id="@+id/textView2" />
             </RelativeLayout>
+                <GridView
+                    android:id="@+id/recommend_mv_selector"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="5dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth"
+                    android:layout_alignTop="@+id/textView2"
+                    android:layout_alignRight="@+id/textView2"
+                    android:layout_alignEnd="@+id/textView2"></GridView>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -237,13 +265,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="20dp"
                     android:text="专栏"
-                    android:textColor="@color/white"
-                    android:id="@+id/textView" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -253,16 +281,16 @@
                     android:layout_marginTop="20dp"
                     android:text="@string/more"
                     android:textColor="@color/tab_indicator_text_unselected" />
+
                 <ListView
                     android:id="@+id/specially_group"
                     android:layout_width="match_parent"
-                    android:divider="@color/transparent"
-                    android:dividerHeight="8dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
-                </ListView>
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView"
+                    android:divider="@color/transparent"
+                    android:dividerHeight="8dp"></ListView>
             </RelativeLayout>
 
         </LinearLayout>
