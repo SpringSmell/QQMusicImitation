@@ -6,6 +6,7 @@ import android.widget.GridView;
 
 /**
  * Created by zoulx on 2015/8/29.
+ * 显示GridView的子值
  */
 public class ShowAllItemGridView extends GridView {
 

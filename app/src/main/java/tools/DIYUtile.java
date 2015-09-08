@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -303,5 +304,9 @@ public class DIYUtile {
 			}
 		}
 		return inSampleSize;
+	}
+
+	public static void showToast(Context context,CharSequence content){
+		Toast.makeText(context,content,Toast.LENGTH_SHORT).show();
 	}
 }

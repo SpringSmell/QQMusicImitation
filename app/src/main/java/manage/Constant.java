@@ -11,4 +11,7 @@ public class Constant {
     public static final int RIGHT = 2;
     public static final int DOWN = 3;
     public static final int UP = 4;
+
+    public static final String SQ="sq";
+    public static final String HQ="hq";
 }

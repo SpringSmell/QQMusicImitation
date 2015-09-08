@@ -7,10 +7,10 @@ import android.widget.ImageView;
  */
 public class ItemListBean {
 
-    private int id;
-    private String title;
-    private String describe;
-    private ImageView cover;
+    private int id=0;
+    private String title="";
+    private String describe="";
+    private ImageView cover=null;
 
     public String getTitle() {
         return title;

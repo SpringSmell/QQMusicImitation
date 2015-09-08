@@ -20,4 +20,5 @@
     <dimen name="recommend_two_line_sp">15sp</dimen>
     <dimen name="recommend_enter_height">40dip</dimen>
     <dimen name="all_right_margin">8dp</dimen>
+    <dimen name="queue_border">15dp</dimen>
 </resources>

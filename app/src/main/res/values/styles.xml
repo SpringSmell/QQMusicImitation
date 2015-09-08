@@ -5,8 +5,9 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
+
     <style name="MyWidget" parent="@android:style/Theme" />
-    
+
     <style name="MyWidget.TabText">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/tab_indicator_text</item>
@@ -21,6 +22,21 @@
         <item name="android:dividerHeight">2px</item>
         <item name="android:listSelector">@android:color/transparent</item>
         <item name="android:fadeScrollbars">true</item>
+    </style>
+
+    <style name="transparentDialogStyle">
+
+        <item name="android:windowBackground">@color/black_tran</item>
+
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowIsFloating">true</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
 </resources>

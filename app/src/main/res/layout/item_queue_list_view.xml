@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/selector_item_queue_dialog">
+
+        <TextView
+            android:id="@+id/queue_song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/queue_border"
+            android:text="南山南"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/queue_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+
+            android:layout_toRightOf="@+id/queue_song_name"
+            android:text="-马..."
+            android:textColor="@color/tab_indicator_text_unselected"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/queue_is_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/queue_border"
+            android:layout_toRightOf="@+id/queue_singer"
+            android:src="@drawable/headset" />
+
+        <TextView
+            android:id="@+id/queue_del_single_song"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/queue_border"
+            android:text="X"
+            android:textColor="@color/tab_indicator_text_unselected"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>

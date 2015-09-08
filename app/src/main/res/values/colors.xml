@@ -14,5 +14,8 @@
     <color name="line_view">#5076878e</color>
     <color name="item_background">#803d5263</color>
     <color name="item_background_select">#1a2d3c</color>
+    <color name="black_tran">#601a1f28</color>
+    <color name="green_theme">#31c27c</color>
+    <color name="gray_theme">@color/tab_indicator_text_unselected</color>
 
 </resources>

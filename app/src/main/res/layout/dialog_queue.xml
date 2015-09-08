@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/queue_border"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_tran"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/queue_border"
+            android:scaleType="fitXY"
+            android:src="@drawable/headset" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="顺序播放队列（95首）"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/queue_border"
+            android:textColor="@color/gray_theme"
+            android:text="@string/clear" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/thin_black" />
+
+    <widgets.SwipeDismissListView
+        android:id="@+id/queue_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:cacheColorHint="@color/tab_indicator_text_unselected"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/thin_black" />
+
+    <TextView
+        android:id="@+id/queue_close"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/close"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>

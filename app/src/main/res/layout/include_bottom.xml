@@ -4,27 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/main_status_bar_height"
     android:background="@color/thin_black"
-    android:orientation="horizontal"
-        >
+    android:orientation="horizontal">
 
-        <widgets.SideViewPager
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/thin_black"
-            android:id="@+id/main_bottom_viewpager"
-            />
-        <ImageView
-            android:id="@+id/main_bottom_pause"
-            android:layout_width="45dp"
-            android:layout_margin="2dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/play"/>
-        <ImageView
-            android:id="@+id/main_bottom_queue"
-            android:layout_width="40dp"
-            android:layout_margin="2dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/song_queue"/>
+    <widgets.SideViewPager
+        android:id="@+id/main_bottom_viewpager"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/thin_black" />
+
+    <ImageView
+        android:id="@+id/main_bottom_pause_play"
+        android:layout_width="45dp"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp"
+        android:src="@drawable/play" />
+
+    <ImageView
+        android:id="@+id/main_bottom_queue"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp"
+        android:src="@drawable/song_queue" />
 
 </LinearLayout>

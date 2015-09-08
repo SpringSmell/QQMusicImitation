@@ -16,4 +16,6 @@
     <string name="start_left">播放上一首</string>
     <string name="start_right">播放下一首</string>
     <string name="more">查看更多 ></string>
+    <string name="clear">清空</string>
+    <string name="close">关闭</string>
 </resources>
