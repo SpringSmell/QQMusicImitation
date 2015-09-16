@@ -1,3 +1,3 @@
 # QQMusicImitation
 这是一个模仿QQ音乐的娱乐项目，一切只为在娱乐中学习东西
-外层框架viewPagerIndicator
+使用viewPagerIndicator
