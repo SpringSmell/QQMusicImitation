@@ -32,7 +32,7 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
     protected int mLastTab = -1;
     //存放选项卡信息的列表
     protected ArrayList<TabInfoBean> mTabs = new ArrayList<>();
-    private ArrayList<MainBottomInfoBean> bottomBeans=new ArrayList<>();
+    protected ArrayList<MainBottomInfoBean> bottomBeanList=new ArrayList<>();
     //viewpager adapter
     protected WidgetAdapter mHomePagerAdapter = null;
     //viewpager
@@ -51,7 +51,7 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        setContentView(getMainViewResId());
+        setContentView(R.layout.main_tab_activity);
         initViews();
 
         //设置viewpager内部页面之间的间距
@@ -76,7 +76,7 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
         // 这里初始化界面
 
         mCurrentTab = supplyTabs(mTabs);
-        mCurrentBottomPager=supplyBottomPager(bottomBeans);
+        mCurrentBottomPager=supplyBottomPager(bottomBeanList);
         Intent intent = getIntent();
         if (intent != null) {
             mCurrentTab = intent.getIntExtra(EXTRA_TAB, mCurrentTab);
@@ -93,7 +93,7 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
         mIndicator.init(mCurrentTab, mTabs, mPager);
 
         mMainBottomViewPager= (ViewPager) findViewById(R.id.main_bottom_viewpager);
-        mMainBottomAdapter=new MainBottomAdapter(getSupportFragmentManager(),bottomBeans);
+        mMainBottomAdapter=new MainBottomAdapter(getSupportFragmentManager(),bottomBeanList);
         mMainBottomViewPager.setAdapter(mMainBottomAdapter);
         mMainBottomViewPager.setCurrentItem(mCurrentBottomPager);
         mPager.setCurrentItem(mCurrentTab);
@@ -190,6 +190,6 @@ public abstract class IndicatorFragmentActivity extends FragmentActivity impleme
     }
 
     protected void showToast(String content){
-        Toast.makeText(this,content,Toast.LENGTH_SHORT).show();
+        Toast.makeText(IndicatorFragmentActivity.this,content,Toast.LENGTH_SHORT).show();
     }
 }

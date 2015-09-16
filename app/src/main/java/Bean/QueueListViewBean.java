@@ -10,6 +10,7 @@ public class QueueListViewBean {
     private Long songId=0l;
     private String type="";
     private Boolean isPlay=false;
+    private String cover="";
 
     public String getType() {
         return type;
@@ -49,5 +50,13 @@ public class QueueListViewBean {
 
     public void setIsPlay(Boolean isPlay) {
         this.isPlay = isPlay;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 }

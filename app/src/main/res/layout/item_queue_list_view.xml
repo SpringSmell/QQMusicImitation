@@ -17,6 +17,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/queue_border"
             android:text="南山南"
+            android:drawablePadding="2dp"
             android:textColor="@color/white"
             android:textSize="14sp" />
 

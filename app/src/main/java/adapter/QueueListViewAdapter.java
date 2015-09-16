@@ -55,6 +55,7 @@ public class QueueListViewAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView==null){
             holder=new ViewHolder();
+            //提示，如果root传null，listView的item只有一层layout时会无法显示高度
             convertView= LayoutInflater.from(mContext).inflate(R.layout.item_queue_list_view,null);
             holder.init(convertView);
             convertView.setTag(holder);
@@ -73,9 +74,9 @@ public class QueueListViewAdapter extends BaseAdapter {
         }
 
         if(bean.getType().equalsIgnoreCase(Constant.SQ)){
-
+            holder.songName.setCompoundDrawablesWithIntrinsicBounds(null,null,mContext.getResources().getDrawable(R.drawable.sq),null);
         }else if(bean.getType().equalsIgnoreCase(Constant.HQ)){
-
+            holder.songName.setCompoundDrawablesWithIntrinsicBounds(null,null,mContext.getResources().getDrawable(R.drawable.hq),null);
         }else{
             holder.songName.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
         }
@@ -91,6 +92,10 @@ public class QueueListViewAdapter extends BaseAdapter {
         });
         convertView.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.selector_item_queue_dialog));
         return convertView;
+    }
+
+    public void setQueueBeans(ArrayList<QueueListViewBean> queueBeans){
+        this.queueBeans=queueBeans;
     }
 
     public void dismiss(int dismissPosition){
